@@ -1,22 +1,37 @@
-Interaction des cases à cocher avec sauvegarde
-   Message Git : "feat: cocher une tâche met à jour le LocalStorage"
+Affichage dynamique des tâches
+   Message Git : "feat: fonction pour afficher les tâches dynamiquement"
   
-function attachCheckboxEvents() {
-    const checkboxes = document.querySelectorAll('.checkbox');
-    
-    checkboxes.forEach(box => {
-        box.addEventListener('click', function() {
-            // On récupère l'index de la tâche cliquée grâce à data-index
-            const index = this.getAttribute('data-index');
-            
-            // On inverse le statut de complétion (vrai devient faux, faux devient vrai)
-            tasks[index].completed = !tasks[index].completed;
-            
-            // On sauvegarde le nouveau statut
-            saveTasks();
-            
-            // On réaffiche la liste pour mettre à jour l'interface
-            renderTasks();
-        });
+const taskListContainer = document.getElementById('task-list');
+
+function renderTasks() {
+    // On vide le conteneur pour ne pas avoir de doublons
+    taskListContainer.innerHTML = '';
+
+    // On parcourt chaque tâche de notre tableau
+    tasks.forEach((task, index) => {
+        // On crée la carte de tâche
+        const taskCard = document.createElement('div');
+        taskCard.className = 'task-card';
+        
+        // Structure HTML interne de la tâche
+        taskCard.innerHTML = `
+            <div class="task-info">
+                <span class="time">${task.time}</span>
+                <div class="task-details">
+                    <h3>${task.title}</h3>
+                    <div class="tags">
+                        <span class="tag ${task.tagClass}">${task.tagText}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox" data-index="${index}" style="background-color: ${task.completed ? 'var(--accent-orange)' : 'transparent'}">
+                ${task.completed ? '✓' : ''}
+            </div>
+        `;
+
+        taskListContainer.appendChild(taskCard);
     });
+
+    // Une fois affichées, on réattache les événements de clic aux nouvelles cases à cocher
+    attachCheckboxEvents();
 }
