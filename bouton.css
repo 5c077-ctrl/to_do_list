@@ -1,0 +1,28 @@
+Bouton flottant et Navigation bas
+   Message Git : "style: placement du bouton et de la nav"
+  
+.floating-action {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+}
+
+.add-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d946ef, #9b51e0);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(217, 70, 239, 0.5);
+}
+
+.bottom-nav {
+    background-color: #121212;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-top: 1px solid #333;
+}
