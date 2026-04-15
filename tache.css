@@ -1,0 +1,56 @@
+Styles des cartes de tâches
+   Message Git : "style: design des cartes de tâches"
+  
+.task-container {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.task-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.task-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.time {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.task-details h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.tag.daily { color: var(--accent-orange); }
+.tag.focus { 
+    background-color: #d946ef; 
+    color: white; 
+    padding: 2px 8px; 
+    border-radius: 10px; 
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    cursor: pointer;
+}
