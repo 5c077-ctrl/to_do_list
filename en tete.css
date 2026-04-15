@@ -1,0 +1,48 @@
+Styles de l'en-tête (Calendrier)
+   Message Git : "style: mise en forme du calendrier violet"
+  
+.header {
+    background-color: var(--primary-purple);
+    padding: 20px;
+    text-align: center;
+}
+
+.month-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.month-selector button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.days-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.active-date {
+    background-color: white;
+    color: var(--primary-purple);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
