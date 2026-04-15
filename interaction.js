@@ -1,3 +1,6 @@
+Interaction des cases à cocher avec sauvegarde
+   Message Git : "feat: cocher une tâche met à jour le LocalStorage"
+  
 function attachCheckboxEvents() {
     const checkboxes = document.querySelectorAll('.checkbox');
     
