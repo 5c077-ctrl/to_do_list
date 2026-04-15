@@ -1,8 +1,4 @@
 Configuration du LocalStorage
-   Message Git : "feat: initialisation du tableau de tâches et LocalStorage"
-
-// 1. On charge les tâches existantes depuis le localStorage.
-// S'il n'y en a pas, on crée un tableau vide [].
 let tasks = JSON.parse(localStorage.getItem('myTasks')) || [];
 
 // 2. Fonction pour sauvegarder notre tableau dans le localStorage
